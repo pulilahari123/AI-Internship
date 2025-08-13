@@ -1,0 +1,95 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPChgy5FB7rykK5LjwLzNkL",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/pulilahari123/ai-internship/blob/main/task-1%20chatbot\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jWREE68U3si2",
+        "outputId": "70220467-d098-4b87-9410-c428695d5e85"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Chatbot: Hello! I am your simple chatbot. Type 'bye' to exit.\n",
+            "You: hii\n",
+            "Chatbot: Hi there! How can I help you?\n",
+            "You: how are you\n",
+            "Chatbot: I'm just a bunch of code, but I'm doing great! How about you?\n",
+            "You: your name\n",
+            "Chatbot: I am a rule-based chatbot created to assist you.\n",
+            "You: time\n",
+            "Chatbot: The current time is 10:01:12\n",
+            "You: date\n",
+            "Chatbot: Today's date is 2025-08-13\n",
+            "You: bye\n",
+            "Chatbot: Goodbye! Have a nice day!\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Simple Rule-Based Chatbot\n",
+        "\n",
+        "def chatbot():\n",
+        "    print(\"Chatbot: Hello! I am your simple chatbot. Type 'bye' to exit.\")\n",
+        "\n",
+        "    while True:\n",
+        "        user_input = input(\"You: \").lower()\n",
+        "\n",
+        "        # Exit condition\n",
+        "        if user_input == \"bye\":\n",
+        "            print(\"Chatbot: Goodbye! Have a nice day!\")\n",
+        "            break\n",
+        "\n",
+        "        # Rule-based responses\n",
+        "        if \"hello\" in user_input or \"hi\" in user_input:\n",
+        "            print(\"Chatbot: Hi there! How can I help you?\")\n",
+        "        elif \"how are you\" in user_input:\n",
+        "            print(\"Chatbot: I'm just a bunch of code, but I'm doing great! How about you?\")\n",
+        "        elif \"your name\" in user_input:\n",
+        "            print(\"Chatbot: I am a rule-based chatbot created to assist you.\")\n",
+        "        elif \"time\" in user_input:\n",
+        "            from datetime import datetime\n",
+        "            print(f\"Chatbot: The current time is {datetime.now().strftime('%H:%M:%S')}\")\n",
+        "        elif \"date\" in user_input:\n",
+        "            from datetime import datetime\n",
+        "            print(f\"Chatbot: Today's date is {datetime.now().strftime('%Y-%m-%d')}\")\n",
+        "        else:\n",
+        "            print(\"Chatbot: Sorry, I didn't understand that. Can you rephrase?\")\n",
+        "\n",
+        "# Run chatbot\n",
+        "chatbot()"
+      ]
+    }
+  ]
+}
